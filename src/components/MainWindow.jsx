@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const navItems = [
   { label: "about", icon: "/icons/icon_about.webp" },
-  { label: "work", icon: "/icons/icon_Work.webp" },
-  { label: "links", icon: "/icons/icon_Links.webp" },
+  { label: "work", icon: "/icons/icon_work.webp" },
+  { label: "links", icon: "/icons/icon_links.webp" },
   { label: "contact", icon: "/icons/icon_contact.webp" },
 ];
 
