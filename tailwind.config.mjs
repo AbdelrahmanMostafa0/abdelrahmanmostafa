@@ -1,3 +1,5 @@
+import { Quicksand } from "next/font/google";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -10,6 +12,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        quicksand: ["Quicksand", " sans-serif"],
       },
     },
   },
