@@ -14,7 +14,11 @@ export default function Home() {
     >
       <MainWindow setOpenedWindow={setOpenedWindow} />
       {openedWindow && (
-        <Window containerRef={containerRef} setOpenedWindow={setOpenedWindow} />
+        <Window
+          title={openedWindow}
+          containerRef={containerRef}
+          setOpenedWindow={setOpenedWindow}
+        />
       )}
       {/* <div className="z-10">
         <Image

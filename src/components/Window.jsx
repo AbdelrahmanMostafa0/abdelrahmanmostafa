@@ -17,7 +17,7 @@ const Window = ({ containerRef, setOpenedWindow, title, children }) => {
     >
       {/* Top bar */}
       <div className="hidden md:flex h-14 items-center px-4 min-w-[700px] bg-[#424242] rounded-t-lg drop-shadow-md border justify-between ">
-        <p className="text-2xl font-bold text-white">home</p>{" "}
+        <p className="text-2xl font-bold text-white">{title || "home"}</p>{" "}
         <button
           onClick={closeWindow}
           className="text-white gap-1 flex items-end font-bold"

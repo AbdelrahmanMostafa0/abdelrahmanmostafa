@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "about", icon: "/icons/icon_about.webp" },
@@ -26,6 +26,20 @@ const NavButton = ({ label, icon, setOpenedWindow }) => (
 );
 
 const MainWindow = ({ setOpenedWindow }) => {
+  const taglines = [
+    "Dev by Day, Side Project Goblin by Night",
+    "CSS Wizard with Too Many Tabs Open",
+    "I Turn 'Just an Idea' into 'Holy Sh*t, It’s Live'",
+    "Built with Love, Caffeine & Console Logs",
+  ];
+
+  const [randomTagline, setRandomTagline] = useState("");
+
+  useEffect(() => {
+    const random = taglines[Math.floor(Math.random() * taglines.length)];
+    setRandomTagline(random);
+  }, []);
+
   return (
     <div className="w-full z-10 space-y-[1px] md:max-w-[700px]">
       {/* Top bar */}
@@ -45,7 +59,7 @@ const MainWindow = ({ setOpenedWindow }) => {
           <h1 className="text-5xl font-extrabold">
             hi! <span className="text-orange-500">i'm abdelrahman</span>
           </h1>
-          <p className="text-2xl">I Code. I Design. I Build Cool Stuff.</p>
+          <p className="text-2xl min-h-9">{randomTagline}</p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 md:gap-x-10 md:gap-y-10">
