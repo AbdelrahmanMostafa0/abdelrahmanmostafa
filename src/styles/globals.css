@@ -16,7 +16,9 @@
   animation: waveAnimation 10s linear infinite;
   fill: #c6e2ff; /* light blue */
 }
-
+body {
+  overflow: hidden;
+}
 @keyframes waveAnimation {
   0% {
     transform: translateX(0);

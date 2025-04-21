@@ -1,10 +1,21 @@
+"use client";
 import MainWindow from "@/components/MainWindow";
+import Window from "@/components/Window";
 import Image from "next/image";
+import { useRef, useState } from "react";
 
 export default function Home() {
+  const containerRef = useRef(null);
+  const [openedWindow, setOpenedWindow] = useState("");
   return (
-    <div className="grid h-dvh place-content-center">
-      <MainWindow />
+    <div
+      ref={containerRef}
+      className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen"
+    >
+      <MainWindow setOpenedWindow={setOpenedWindow} />
+      {openedWindow && (
+        <Window containerRef={containerRef} setOpenedWindow={setOpenedWindow} />
+      )}
       {/* <div className="z-10">
         <Image
           src={"/avatar-img.png"}

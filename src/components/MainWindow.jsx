@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 
 const navItems = [
   { label: "about", icon: "/icons/icon_about.webp" },
@@ -7,20 +9,23 @@ const navItems = [
   { label: "contact", icon: "/icons/icon_contact.webp" },
 ];
 
-const NavButton = ({ label, icon }) => (
-  <button className="flex flex-col items-center space-y-2 text-center group">
+const NavButton = ({ label, icon, setOpenedWindow }) => (
+  <button
+    onClick={() => setOpenedWindow(label)}
+    className="flex flex-col items-center space-y-2 text-center group active:scale-95"
+  >
     <Image
       src={icon}
       alt={`${label} icon`}
       width={500}
       height={500}
-      className="w-16 md:w-20 drop-shadow-xl transition-transform group-hover:scale-110"
+      className="w-16 md:w-20 drop-shadow-xl transition-transform group-hover:scale-105 group-active:scale-100"
     />
-    <p className="text-xl font-semibold capitalize">{label}</p>
+    <p className="text-xl font-semibold ">{label}</p>
   </button>
 );
 
-const MainWindow = () => {
+const MainWindow = ({ setOpenedWindow }) => {
   return (
     <div className="w-full z-10 space-y-[1px] md:max-w-[700px]">
       {/* Top bar */}
@@ -45,7 +50,12 @@ const MainWindow = () => {
 
         <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 md:gap-x-10 md:gap-y-10">
           {navItems.map((item) => (
-            <NavButton key={item.label} label={item.label} icon={item.icon} />
+            <NavButton
+              setOpenedWindow={setOpenedWindow}
+              key={item.label}
+              label={item.label}
+              icon={item.icon}
+            />
           ))}
         </div>
       </div>
