@@ -58,11 +58,13 @@ const About = () => {
         <h3 className="text-2xl font-bold">OTHER INTERESTS</h3>
 
         <ul className="list-disc list-inside space-y-2 text-lg font-medium text-gray-700">
-          <li>gaming like it's a second job 🎮</li>
+          <li>button-mashing retired — now I game for fun, not fame 🎮</li>
           <li>dabbling in 3D and pretending I know Blender</li>
-          <li>making things look ✨aesthetic✨</li>
+          <li>making things look ✨aesthetic✨ (it’s a lifestyle)</li>
           <li>cutting videos like I'm directing a blockbuster</li>
           <li>swimming — still got it from the pro days 🏊‍♂️</li>
+          <li>reading stuff that makes my brain do backflips 📚</li>
+          <li>occasionally sketching, always vibing with art 🎨</li>
         </ul>
       </div>
       <div className="space-y-4">
