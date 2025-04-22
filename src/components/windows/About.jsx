@@ -74,7 +74,7 @@ const About = () => {
   arabic: {
     level: "native",
     confidence: "100%",
-    sass: true,
+    proficiency: "fluent",
   },
   english: {
     level: "professional",
