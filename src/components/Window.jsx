@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { motion, useDragControls } from "framer-motion";
 import { IoCloseSharp } from "react-icons/io5";
 import { cn } from "@/utils/cn";
+import { useWindowsContext } from "@/context/WindowsContext";
 const Window = ({
   containerRef,
   setOpenedWindow,
@@ -12,8 +13,9 @@ const Window = ({
   width = 700,
   height = 550,
 }) => {
+  const { removeWindow, pushToTop } = useWindowsContext();
   const controls = useDragControls();
-  const closeWindow = () => setOpenedWindow("");
+  const closeWindow = () => removeWindow(title);
   const h = `h-[${height}px]`;
   return (
     <motion.div
@@ -27,9 +29,12 @@ const Window = ({
       initial={{ opacity: 0, scale: 0.2 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.1, ease: "easeOut" }}
+      onMouseDown={() => pushToTop(title)}
     >
       {/* Top bar */}
       <div
+        // onClick={() => pushToTop(title)}
+
         className={`hidden md:flex h-14 items-center px-4 min-w-[${width}px] bg-[#424242] rounded-t-lg drop-shadow-md border justify-between `}
       >
         <p className="text-2xl font-bold text-white">{title || "home"}</p>{" "}

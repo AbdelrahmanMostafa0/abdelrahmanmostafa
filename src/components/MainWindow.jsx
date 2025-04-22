@@ -1,4 +1,5 @@
 "use client";
+import { useWindowsContext } from "@/context/WindowsContext";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -9,21 +10,31 @@ const navItems = [
   { label: "contact", icon: "/icons/icon_contact.webp" },
 ];
 
-const NavButton = ({ label, icon, setOpenedWindow }) => (
-  <button
-    onClick={() => setOpenedWindow(label)}
-    className="flex flex-col items-center space-y-2 text-center group active:scale-95"
-  >
-    <Image
-      src={icon}
-      alt={`${label} icon`}
-      width={500}
-      height={500}
-      className="w-16 md:w-20 drop-shadow-xl transition-transform group-hover:scale-105 group-active:scale-100"
-    />
-    <p className="text-xl font-semibold ">{label}</p>
-  </button>
-);
+const NavButton = ({ label, icon, setOpenedWindow }) => {
+  const { windows, addWindow } = useWindowsContext();
+  const openWindow = () => {
+    if (windows.includes(label)) {
+      return;
+    } else {
+      addWindow(label);
+    }
+  };
+  return (
+    <button
+      onClick={openWindow}
+      className="flex flex-col items-center space-y-2 text-center group active:scale-95"
+    >
+      <Image
+        src={icon}
+        alt={`${label} icon`}
+        width={500}
+        height={500}
+        className="w-16 md:w-20 drop-shadow-xl transition-transform group-hover:scale-105 group-active:scale-100"
+      />
+      <p className="text-xl font-semibold ">{label}</p>
+    </button>
+  );
+};
 
 const MainWindow = ({ setOpenedWindow }) => {
   const taglines = [

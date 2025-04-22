@@ -1,64 +1,35 @@
 "use client";
-import About from "@/components/windows/About";
 import MainWindow from "@/components/MainWindow";
-import Window from "@/components/Window";
-import Image from "next/image";
 import { useRef, useState } from "react";
-import Work from "@/components/windows/Contact";
-import Contact from "@/components/windows/Contact";
-import Links from "@/components/windows/Links";
+import RenderWindow from "@/components/windows/RenderWindow";
+import { useWindowsContext } from "@/context/WindowsContext";
 
 export default function Home() {
   const containerRef = useRef(null);
   const [openedWindow, setOpenedWindow] = useState("");
+  const { windows } = useWindowsContext();
+
   return (
     <div
       ref={containerRef}
       className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen"
     >
       <MainWindow setOpenedWindow={setOpenedWindow} />
-      {openedWindow && openedWindow === "about" ? (
-        <Window
-          title={openedWindow}
-          containerRef={containerRef}
-          setOpenedWindow={setOpenedWindow}
-          containerStyle={"max-w-[500px]"}
-        >
-          <div className="!overflow-auto w-full h-dvh">
-            <About />
-
-            {/* <About /> */}
-            {/* <Contact /> */}
-          </div>
-        </Window>
-      ) : openedWindow === "contact" ? (
-        <Window
-          width={400}
-          title={openedWindow}
-          containerRef={containerRef}
-          setOpenedWindow={setOpenedWindow}
-          containerStyle={"max-w-[500px]"}
-        >
-          <div className="!overflow-auto w-full h-dvh">
-            <Contact />
-          </div>
-        </Window>
-      ) : (
-        openedWindow === "links" && (
-          <Window
-            height={350}
-            width={500}
-            title={openedWindow}
+      {windows.map((window) => {
+        return (
+          <RenderWindow
+            key={window}
+            window={window}
+            // setOpenedWindow={setOpenedWindow}
             containerRef={containerRef}
-            setOpenedWindow={setOpenedWindow}
-            containerStyle={"max-w-[500px]"}
-          >
-            <div className="!overflow-auto w-full h-dvh">
-              <Links />
-            </div>
-          </Window>
-        )
-      )}
+          />
+        );
+      })}
+      <RenderWindow
+        window={openedWindow}
+        setOpenedWindow={setOpenedWindow}
+        containerRef={containerRef}
+      />
       <div className="fixed bottom-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path

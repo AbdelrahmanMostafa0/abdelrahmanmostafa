@@ -17,14 +17,19 @@ export const WindowProvider = ({ children }) => {
   const removeWindow = (item) => {
     setWindows((prev) => prev.filter((i) => i !== item));
   };
-
+  const pushToTop = (item) => {
+    setWindows((prev) => {
+      const newWindows = prev.filter((i) => i !== item);
+      return [...newWindows, item];
+    });
+  };
   const clearWindows = () => {
     setWindows([]);
   };
 
   return (
     <WindowsContext.Provider
-      value={{ windows, addWindow, removeWindow, clearWindows }}
+      value={{ windows, addWindow, removeWindow, clearWindows, pushToTop }}
     >
       {children}
     </WindowsContext.Provider>
