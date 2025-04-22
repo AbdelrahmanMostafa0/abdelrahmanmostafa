@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import Work from "@/components/windows/Contact";
 import Contact from "@/components/windows/Contact";
+import Links from "@/components/windows/Links";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -30,17 +31,30 @@ export default function Home() {
             {/* <Contact /> */}
           </div>
         </Window>
+      ) : openedWindow === "contact" ? (
+        <Window
+          width={400}
+          title={openedWindow}
+          containerRef={containerRef}
+          setOpenedWindow={setOpenedWindow}
+          containerStyle={"max-w-[500px]"}
+        >
+          <div className="!overflow-auto w-full h-dvh">
+            <Contact />
+          </div>
+        </Window>
       ) : (
-        openedWindow === "contact" && (
+        openedWindow === "links" && (
           <Window
-            width={400}
+            height={350}
+            width={500}
             title={openedWindow}
             containerRef={containerRef}
             setOpenedWindow={setOpenedWindow}
             containerStyle={"max-w-[500px]"}
           >
             <div className="!overflow-auto w-full h-dvh">
-              <Contact />
+              <Links />
             </div>
           </Window>
         )
