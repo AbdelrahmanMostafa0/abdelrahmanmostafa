@@ -43,7 +43,7 @@ const MainWindow = ({ setOpenedWindow }) => {
   const taglines = [
     "Dev by Day, Side Project Goblin by Night",
     "CSS Wizard with Too Many Tabs Open",
-    "I Turn 'Just an Idea' into 'Oh Sh*t, It’s Live'",
+    "I Turn 'Just an Idea' into 'Oh, It’s Live'",
     "Built with Love, Caffeine & Console Logs",
   ];
 
