@@ -13,7 +13,7 @@ const About = () => {
           //   className="w-16 aspect-square"
         />
         <div className="gap-2">
-          <h2 className="text-orange-500 text-4xl font-bold">
+          <h2 className="text-orange-500 dark:dark:text-blue-300 text-4xl font-bold">
             Abdelrahman Mostafa
           </h2>
           <p className="text-lg">
@@ -24,19 +24,19 @@ const About = () => {
             <Link
               target="_blank"
               href={"https://lesoll.com"}
-              className="text-orange-500 underline font-semibold"
+              className="text-orange-500 dark:dark:text-blue-300 underline font-semibold"
             >
               Lesoll.com
             </Link>
           </div>
         </div>
       </div>
-      <div className="text-gray-700 space-y-4">
+      <div className="text-gray-700 space-y-4 dark:text-white/80">
         <p>
           hi! i'm abdelrahman, a frontend developer who loves building fast,
           responsive, and interactive web experiences. i...
         </p>
-        <ul className="list-disc list-inside space-y-2 text-lg font-medium text-gray-700">
+        <ul className="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 dark:text-white/80">
           <li>craft smooth interfaces with React & NextJs</li>
           <li>build responsive layouts with Tailwind CSS</li>
           <li>focus on performance, accessibility and SEO</li>
@@ -57,7 +57,7 @@ const About = () => {
       <div className="space-y-4">
         <h3 className="text-2xl font-bold">OTHER INTERESTS</h3>
 
-        <ul className="list-disc list-inside space-y-2 text-lg font-medium text-gray-700">
+        <ul className="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 dark:text-white/80">
           <li>button-mashing retired — now I game for fun, not fame 🎮</li>
           <li>dabbling in 3D and pretending I know Blender</li>
           <li>making things look ✨aesthetic✨ (it’s a lifestyle)</li>
@@ -69,7 +69,7 @@ const About = () => {
       </div>
       <div className="space-y-4">
         <h3 className="text-2xl font-bold">LANGUAGE CONFIGURATION 🧠</h3>
-        <pre className="bg-gray-100 text-sm p-4 rounded-lg overflow-x-auto text-gray-800">
+        <pre className="bg-gray-100 dark:bg-white/20 dark:text-white text-sm p-4 rounded-lg overflow-x-auto text-gray-800 w-11/12">
           {`const languages = {
   arabic: {
     level: "native",

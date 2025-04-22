@@ -17,6 +17,10 @@ const Window = ({
   const controls = useDragControls();
   const closeWindow = () => removeWindow(title);
   const h = `h-[${height}px]`;
+  const playSound = () => {
+    const audio = new Audio("/sound/click.mp3");
+    audio.play();
+  };
   return (
     <motion.div
       drag
@@ -39,7 +43,10 @@ const Window = ({
       >
         <p className="text-2xl font-bold text-white">{title || "home"}</p>{" "}
         <button
-          onClick={closeWindow}
+          onClick={() => {
+            closeWindow();
+            playSound();
+          }}
           className="text-white gap-1 flex items-end font-bold"
         >
           [<IoCloseSharp />]
@@ -51,7 +58,7 @@ const Window = ({
         className={cn(
           `
       h-[550px] p-5 py-2 gap-10 flex flex-col justify-center items-center
-          md:min-w-[${width}px] md:border-2 md:border-[#424242] md:border-opacity-35 md:bg-white
+          md:min-w-[${width}px] md:border-2 md:border-[#424242] md:border-opacity-35 md:bg-white md:dark:bg-slate-800 dark:text-white
           rounded-b-lg drop-shadow-xl overflow-auto
         `,
           `h-[${height}px]`

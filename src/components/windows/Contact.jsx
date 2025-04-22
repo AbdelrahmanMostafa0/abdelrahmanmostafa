@@ -27,7 +27,7 @@ const Contact = () => {
         {" "}
         <a
           href="mailto:abdelrahmanmostafa.developer@email.com"
-          className="px-4 py-2 bg-orange-500 text-white rounded-lg mx-auto"
+          className="px-4 py-2 bg-orange-500 dark:bg-blue-500 text-white rounded-lg mx-auto"
         >
           send me an email!
         </a>
