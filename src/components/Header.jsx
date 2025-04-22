@@ -26,11 +26,19 @@ const Header = () => {
     localStorage.setItem("theme", nowDark ? "dark" : "light");
     setIsDark(nowDark);
   };
-
+  const playSound = () => {
+    const audio = new Audio("/sound/click.mp3");
+    audio.play();
+  };
   return (
     <div className="fixed top-5 left-5 dark:text-white">
       {/* <WiDaySunny className="text-5xl" /> */}
-      <button onClick={toggleDarkMode}>
+      <button
+        onClick={() => {
+          playSound();
+          toggleDarkMode();
+        }}
+      >
         {isDark ? (
           <motion.div
             initial={{ rotate: 0 }}
