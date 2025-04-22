@@ -1,4 +1,5 @@
 "use client";
+import About from "@/components/About";
 import MainWindow from "@/components/MainWindow";
 import Window from "@/components/Window";
 import Image from "next/image";
@@ -18,20 +19,12 @@ export default function Home() {
           title={openedWindow}
           containerRef={containerRef}
           setOpenedWindow={setOpenedWindow}
-        />
+        >
+          <div className="!overflow-auto w-full h-dvh">
+            <About />
+          </div>
+        </Window>
       )}
-      {/* <div className="z-10">
-        <Image
-          src={"/avatar-img.png"}
-          width={1000}
-          height={1000}
-          alt="avatar image"
-          className="max-w-[500px] w-full"
-        />
-        <h1 className="text-center font-bold text-4xl animate-">
-          Abdelrahman Mostafa
-        </h1>
-      </div> */}
       <div className="fixed bottom-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path

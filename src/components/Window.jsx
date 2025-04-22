@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { motion, useDragControls } from "framer-motion"; // ✅ دي لازم تكون framer-motion مش motion/react
+import { motion, useDragControls } from "framer-motion";
 import { IoCloseSharp } from "react-icons/io5";
 const Window = ({ containerRef, setOpenedWindow, title, children }) => {
   const controls = useDragControls();
@@ -29,12 +29,12 @@ const Window = ({ containerRef, setOpenedWindow, title, children }) => {
       {/* Main content */}
       <div
         className="
-          h-[500px] p-5 gap-10 flex flex-col justify-center items-center
+          h-[500px] p-5 py-2 gap-10 flex flex-col justify-center items-center
           md:min-w-[700px] md:border-2 md:border-[#424242] md:border-opacity-35 md:bg-white
           rounded-b-lg drop-shadow-xl overflow-auto
         "
       >
-        <div className="h-dvh"></div>
+        {children}
       </div>
     </motion.div>
   );

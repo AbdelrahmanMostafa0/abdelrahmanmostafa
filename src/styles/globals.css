@@ -27,3 +27,10 @@ body {
     transform: translateX(-50%);
   }
 }
+
+/* body {
+  cursor: url("/cursors/curso.png"), default;
+} */
+/* body {
+  cursor: url("/cursors/cursor-active.png"), ;
+} */
