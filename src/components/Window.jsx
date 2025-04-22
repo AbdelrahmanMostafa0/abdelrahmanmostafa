@@ -2,7 +2,14 @@
 import { useRef } from "react";
 import { motion, useDragControls } from "framer-motion";
 import { IoCloseSharp } from "react-icons/io5";
-const Window = ({ containerRef, setOpenedWindow, title, children }) => {
+import { cn } from "@/utils/cn";
+const Window = ({
+  containerRef,
+  setOpenedWindow,
+  title,
+  children,
+  containerStyle,
+}) => {
   const controls = useDragControls();
   const closeWindow = () => setOpenedWindow("");
   return (
@@ -10,7 +17,10 @@ const Window = ({ containerRef, setOpenedWindow, title, children }) => {
       drag
       dragControls={controls}
       dragConstraints={containerRef}
-      className="md:block hidden w-full z-10 space-y-[1px] md:max-w-[700px] absolute top-[15%] left-[30%] ml-5"
+      className={cn(
+        `md:block hidden w-full z-10 space-y-[1px] md:max-w-[700px] absolute top-[15%] left-[30%] ml-5`,
+        containerStyle
+      )}
       initial={{ opacity: 0, scale: 0.2 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.1, ease: "easeOut" }}

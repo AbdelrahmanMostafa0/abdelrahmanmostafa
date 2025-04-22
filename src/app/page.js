@@ -1,5 +1,5 @@
 "use client";
-import About from "@/components/About";
+import About from "@/components/windows/About";
 import MainWindow from "@/components/MainWindow";
 import Window from "@/components/Window";
 import Image from "next/image";
