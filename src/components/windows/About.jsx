@@ -1,6 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-
+const DEVELOPMENT = [
+  "HTML / CSS",
+  "javascript",
+  "React.js",
+  "Next.js",
+  "Tailwind CSS",
+  "Redux",
+  "Redux toolkit",
+  "GSAP",
+  "Framer Motion",
+];
+const TOOLS = ["Git", "AWS", "Figma", "VS Code", "Postman", "Canva", "Blender"];
 const About = () => {
   return (
     <div className="w-full space-y-8">
@@ -48,6 +59,34 @@ const About = () => {
           <li>focus on performance, accessibility and SEO</li>
           <li>turn designs into clean, reusable components</li>
         </ul>
+      </div>
+      <div className="space-y-4">
+        <h3 className="text-2xl font-bold text-black dark:text-white">
+          DEVELOPMENT
+        </h3>
+        <div className="flex  gap-3 flex-wrap">
+          {DEVELOPMENT.map((item, index) => (
+            <div
+              key={item}
+              className="bg-white dark:bg-slate-950 dark:text-white te px-5 py-2 rounded-xl border drop-shadow-lg md:text-base text-sm"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="space-y-4">
+        <h3 className="text-2xl font-bold text-black dark:text-white">TOOLS</h3>
+        <div className="flex  gap-3 flex-wrap">
+          {TOOLS.map((item, index) => (
+            <div
+              key={item}
+              className="bg-white dark:bg-slate-950 dark:text-white te px-5 py-2 rounded-xl border drop-shadow-lg md:text-base text-sm"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
       <div className="space-y-4">
         <h3 className="text-2xl font-bold text-black dark:text-white">

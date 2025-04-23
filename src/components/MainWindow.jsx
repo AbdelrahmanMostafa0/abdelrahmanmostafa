@@ -25,7 +25,7 @@ const NavButton = ({ label, icon, setOpenedWindow }) => {
   return (
     <button
       onClick={openWindow}
-      className="flex flex-col items-center space-y-2 text-center group active:scale-95 dark:text-white bg-black/15 dark:bg-white/15 md:bg-transparent md:dark:bg-transparent p-5  px-7  md:px-0 md:p-0 rounded-lg"
+      className="flex flex-col items-center space-y-2 text-center group active:scale-95 text-gray-800 dark:text-white bg-black/15 dark:bg-white/15 md:bg-transparent md:dark:bg-transparent p-5  px-7  md:px-0 md:p-0 rounded-lg"
     >
       <Image
         src={icon}
