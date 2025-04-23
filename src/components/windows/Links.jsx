@@ -7,7 +7,7 @@ const Links = () => {
         <a
           href="https://github.com/AbdelrahmanMostafa0"
           target="_blank"
-          className="md:gap-2 drop-shadow-xl transition-transform hover:scale-105 active:scale-100 flex md:flex-col items-center md:border-none border-2 w-full p-3 rounded-xl md:bg-transparent bg-black/30 dark:bg-white/20 gap-5  !text-black !dark:text-white "
+          className="md:gap-2 drop-shadow-xl transition-transform hover:scale-105 active:scale-100 flex md:flex-col items-center md:border-none border-2 w-full p-3 rounded-xl md:bg-transparent bg-black/30 dark:bg-white/20  md:dark:bg-transparent gap-5  text-white "
         >
           <Image
             src={"/icons/social-media/github.png"}
@@ -17,18 +17,14 @@ const Links = () => {
             className="w-24 dark:"
           />
           <div>
-            <p className="md:text-center font-bold text-xl dark:text-white">
-              GitHub
-            </p>
-            <p className="md:hidden text-black dark:text-white">
-              @abdelrahmanmostafa0
-            </p>
+            <p className="md:text-center font-bold text-xl">GitHub</p>
+            <p className="md:hidden">@abdelrahmanmostafa0</p>
           </div>
         </a>
         <a
           href="https://www.linkedin.com/in/abdelrahmanmostafa0/"
           target="_blank"
-          className="md:gap-2 drop-shadow-xl transition-transform hover:scale-105 active:scale-100 flex md:flex-col items-center md:border-none border-2 w-full p-3 rounded-xl md:bg-transparent bg-black/30 dark:bg-white/20 gap-5  !text-black dark:text-white "
+          className="md:gap-2 drop-shadow-xl transition-transform hover:scale-105 active:scale-100 flex md:flex-col items-center md:border-none border-2 w-full p-3 rounded-xl md:bg-transparent bg-black/30 dark:bg-white/20 md:dark:bg-transparent gap-5  text-white "
         >
           <Image
             src={"/icons/social-media/linkedin.png"}
@@ -38,19 +34,15 @@ const Links = () => {
             className="w-24 dark:"
           />
           <div>
-            <p className="md:text-center font-bold text-xl dark:text-white">
-              LinkedIn
-            </p>
-            <p className="md:hidden text-black dark:text-white">
-              @abdelrahmanmostafa0
-            </p>
+            <p className="md:text-center font-bold text-xl">LinkedIn</p>
+            <p className="md:hidden ">@abdelrahmanmostafa0</p>
           </div>
         </a>
 
         {/* <a
         href="https://discord.com/users/685266943497994240"
         target="_blank"
-        className="md:gap-2 drop-shadow-xl transition-transform hover:scale-105 active:scale-100 flex md:flex-col items-center md:border-none border-2 w-full p-3 rounded-xl md:bg-transparent bg-black/30 dark:bg-white/20 gap-5  !text-black !dark:text-white "
+        className="md:gap-2 drop-shadow-xl transition-transform hover:scale-105 active:scale-100 flex md:flex-col items-center md:border-none border-2 w-full p-3 rounded-xl md:bg-transparent bg-black/30 dark:bg-white/20 md:dark:bg-transparent gap-5  text-white "
       >
         <Image
           src={"/icons/social-media/discord (1).png"}
@@ -59,12 +51,12 @@ const Links = () => {
           height={50}
           className="w-24 dark:"
         />
-        <p className="text-center font-bold text-xl dark:text-white">Discord</p>
+        <p className="text-center font-bold text-xl md">Discord</p>
       </a> */}
         <a
           href="https://www.instagram.com/abdelrahman_mostafaa0/"
           target="_blank"
-          className="md:gap-2 drop-shadow-xl transition-transform hover:scale-105 active:scale-100 flex md:flex-col items-center md:border-none border-2 w-full p-3 rounded-xl md:bg-transparent bg-black/30 dark:bg-white/20 gap-5  !text-black !dark:text-white "
+          className="md:gap-2 drop-shadow-xl transition-transform hover:scale-105 active:scale-100 flex md:flex-col items-center md:border-none border-2 w-full p-3 rounded-xl md:bg-transparent bg-black/30 dark:bg-white/20 md:dark:bg-transparent gap-5  text-white "
         >
           <Image
             src={"/icons/social-media/instagram.png"}
@@ -74,16 +66,12 @@ const Links = () => {
             className="w-24 dark:"
           />
           <div>
-            <p className="md:text-center font-bold text-xl dark:text-white">
-              Instagram
-            </p>
-            <p className="md:hidden text-black dark:text-white">
-              @abdelrahman_mostafaa0
-            </p>
+            <p className="md:text-center font-bold text-xl md">Instagram</p>
+            <p className="md:hidden ">@abdelrahman_mostafaa0</p>
           </div>
         </a>
       </div>
-      <div className="w-fit border p-5 rounded-lg text-black bg-white  dark:bg-transparent dark:text-white text-sm mb-5">
+      <div className="w-fit border p-5 rounded-lg dark:text-white  bg-white  dark:bg-transparent text-sm mb-5">
         Clicking any link will open it in a new tab.
       </div>
     </div>

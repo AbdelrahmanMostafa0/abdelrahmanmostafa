@@ -25,7 +25,7 @@ const NavButton = ({ label, icon, setOpenedWindow }) => {
   return (
     <button
       onClick={openWindow}
-      className="flex flex-col items-center space-y-2 text-center group active:scale-95 dark:text-white"
+      className="flex flex-col items-center space-y-2 text-center group active:scale-95 dark:text-white bg-black/15 dark:bg-white/15 md:bg-transparent md:dark:bg-transparent p-5  px-7  md:px-0 md:p-0 rounded-lg"
     >
       <Image
         src={icon}
@@ -79,7 +79,7 @@ const MainWindow = ({ setOpenedWindow }) => {
           <p className="text-2xl min-h-9 dark:text-white">{randomTagline}</p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 md:gap-x-10 md:gap-y-10">
+        <div className="flex flex-wrap justify-center gap-y-8 gap-x-10 md:gap-y-10">
           {navItems.map((item) => (
             <NavButton
               setOpenedWindow={setOpenedWindow}
