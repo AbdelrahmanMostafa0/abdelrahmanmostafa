@@ -30,7 +30,7 @@ const RenderMobileWindow = ({ children, title = "about" }) => {
       animate={{ y: 0 }}
       exit={{ y: "100%" }}
       transition={{ type: "tween", duration: 0.5 }}
-      className="fixed bottom-0 left-0 w-full h-[85dvh] z-[9999] shadow-[0_-2px_10px_rgba(0,0,0,0.1)] rounded-t-2xl "
+      className="fixed bottom-0 left-0 w-full h-[94dvh] z-[9999] shadow-[0_-2px_10px_rgba(0,0,0,0.1)] rounded-t-2xl "
     >
       {/* Your content here */}
 
