@@ -31,7 +31,7 @@ const Header = () => {
     audio.play();
   };
   return (
-    <div className="fixed top-5 left-5 dark:text-white z-10">
+    <div className="fixed top-5 left-5 text-white z-10">
       {/* <WiDaySunny className="text-5xl" /> */}
       <button
         onClick={() => {
