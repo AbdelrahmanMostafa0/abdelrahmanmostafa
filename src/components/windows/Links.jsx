@@ -3,7 +3,7 @@ import Image from "next/image";
 const Links = () => {
   return (
     <div className="h-full flex flex-col items-center justify-center gap-7  w-full">
-      <div className="flex md:flex-row flex-col w-full items-center justify-center gap-10 md:mt-7">
+      <div className="flex md:flex-row flex-col w-full items-center justify-center gap-7 md:mt-7">
         <a
           href="https://github.com/AbdelrahmanMostafa0"
           target="_blank"

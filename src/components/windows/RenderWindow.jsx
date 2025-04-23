@@ -48,7 +48,7 @@ const RenderWindow = ({ window, setOpenedWindow, containerRef }) => {
             setOpenedWindow={setOpenedWindow}
             containerStyle={"max-w-[500px]"}
           >
-            <div className="!overflow-auto w-full ">
+            <div className=" w-full ">
               <Links />
             </div>
           </Window>
