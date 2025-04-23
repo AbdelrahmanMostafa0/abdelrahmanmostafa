@@ -17,7 +17,9 @@ const Links = () => {
             className="w-24 dark:"
           />
           <div>
-            <p className="md:text-center font-bold text-xl">GitHub</p>
+            <p className="md:text-center font-bold text-xl dark:text-white md:text-black">
+              GitHub
+            </p>
             <p className="md:hidden">@abdelrahmanmostafa0</p>
           </div>
         </a>
@@ -34,7 +36,9 @@ const Links = () => {
             className="w-24 dark:"
           />
           <div>
-            <p className="md:text-center font-bold text-xl">LinkedIn</p>
+            <p className="md:text-center font-bold text-xl dark:text-white md:text-black">
+              LinkedIn
+            </p>
             <p className="md:hidden ">@abdelrahmanmostafa0</p>
           </div>
         </a>
@@ -66,7 +70,9 @@ const Links = () => {
             className="w-24 dark:"
           />
           <div>
-            <p className="md:text-center font-bold text-xl md">Instagram</p>
+            <p className="md:text-center font-bold text-xl md dark:text-white md:text-black">
+              Instagram
+            </p>
             <p className="md:hidden ">@abdelrahman_mostafaa0</p>
           </div>
         </a>

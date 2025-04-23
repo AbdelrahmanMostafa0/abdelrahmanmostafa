@@ -18,30 +18,26 @@ export default function Home() {
       ref={containerRef}
       className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen dark:bg-slate-900"
     >
-      <MainWindow setOpenedWindow={setOpenedWindow} />
-
+      <MainWindow />
       <div className="fixed top-0  dark:hidden left-0 w-full h-full bg-gradient-to-b from-blue-500 to-blue-300 opacity-50 z-0"></div>
       {windowWidth <= 768 && (
         <AnimatePresence>
           {windows.length > 0 && <RenderMobileWindow />}
         </AnimatePresence>
       )}
-      {windowWidth > 768 &&
-        windows.map((window) => {
-          return (
-            <RenderWindow
-              key={window}
-              window={window}
-              // setOpenedWindow={setOpenedWindow}
-              containerRef={containerRef}
-            />
-          );
-        })}
-      <RenderWindow
-        window={openedWindow}
-        setOpenedWindow={setOpenedWindow}
-        containerRef={containerRef}
-      />
+      <AnimatePresence>
+        {windowWidth > 768 &&
+          windows.map((window) => {
+            return (
+              <RenderWindow
+                key={window}
+                window={window}
+                containerRef={containerRef}
+              />
+            );
+          })}
+      </AnimatePresence>
+      ß
       <div className="fixed bottom-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path

@@ -30,6 +30,7 @@ const Window = ({
         `md:block hidden w-full z-10 space-y-[1px] absolute top-[15%] left-[30%] ml-5`,
         containerStyle
       )}
+      exit={{ scale: 0.2 }}
       initial={{ opacity: 0, scale: 0.2 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.1, ease: "easeOut" }}
