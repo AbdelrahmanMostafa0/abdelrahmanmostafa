@@ -45,11 +45,11 @@ const Header = () => {
             animate={{ rotate: 90 }}
             transition={{ duration: 0.5, repeatType: "reverse" }}
           >
-            <BsFillSunFill className="text-4xl" />
+            <BsFillSunFill className="text-4xl drop-shadow-lg" />
           </motion.div>
         ) : (
           <motion.div>
-            <RiMoonFill className="text-4xl" />
+            <RiMoonFill className="text-4xl drop-shadow-lg" />
           </motion.div>
         )}
         {/* {!isDark ? (
