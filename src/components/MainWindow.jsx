@@ -32,7 +32,7 @@ const NavButton = ({ label, icon, setOpenedWindow }) => {
         alt={`${label} icon`}
         width={500}
         height={500}
-        className="w-16 md:w-20 drop-shadow-xl transition-transform group-hover:scale-105 group-active:scale-100 dark:invert"
+        className="w-16 md:w-20 drop-shadow-xl transition-transform group-hover:scale-105 group-active:scale-100 dark:"
       />
       <p className="text-xl font-semibold ">{label}</p>
     </button>

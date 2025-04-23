@@ -3,11 +3,15 @@ import MainWindow from "@/components/MainWindow";
 import { useRef, useState } from "react";
 import RenderWindow from "@/components/windows/RenderWindow";
 import { useWindowsContext } from "@/context/WindowsContext";
+import { useWindowWidth } from "@/hooks/useWindowWidth";
+import RenderMobileWindow from "@/components/RenderMobileWindow";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const containerRef = useRef(null);
   const [openedWindow, setOpenedWindow] = useState("");
   const { windows } = useWindowsContext();
+  const { windowWidth } = useWindowWidth();
 
   return (
     <div
@@ -15,16 +19,24 @@ export default function Home() {
       className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen dark:bg-slate-900"
     >
       <MainWindow setOpenedWindow={setOpenedWindow} />
-      {windows.map((window) => {
-        return (
-          <RenderWindow
-            key={window}
-            window={window}
-            // setOpenedWindow={setOpenedWindow}
-            containerRef={containerRef}
-          />
-        );
-      })}
+
+      <div className="fixed top-0  dark:hidden left-0 w-full h-full bg-gradient-to-b from-blue-500 to-blue-300 opacity-50 z-0"></div>
+      {windowWidth <= 768 && (
+        <AnimatePresence>
+          {windows.length > 0 && <RenderMobileWindow />}
+        </AnimatePresence>
+      )}
+      {windowWidth > 768 &&
+        windows.map((window) => {
+          return (
+            <RenderWindow
+              key={window}
+              window={window}
+              // setOpenedWindow={setOpenedWindow}
+              containerRef={containerRef}
+            />
+          );
+        })}
       <RenderWindow
         window={openedWindow}
         setOpenedWindow={setOpenedWindow}
