@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-6 text-black dark:text-white">
       <div className="flex items-center gap-5  justify-center pt-4">
         <Image
           src={"/contact-me.png"}

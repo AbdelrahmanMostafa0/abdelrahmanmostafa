@@ -4,7 +4,7 @@ import Link from "next/link";
 const About = () => {
   return (
     <div className="w-full space-y-8">
-      <div className="flex md:flex-row flex-col dark:bg- items-center gap-5 pb-4 border-b-2">
+      <div className="flex md:flex-row flex-col dark:bg- items-center gap-5 pb-4 border-b-2 ">
         <Image
           src={"/avatar-img.png"}
           alt="avatar image "
@@ -12,7 +12,7 @@ const About = () => {
           height={180}
           //   className="w-16 aspect-square"
         />
-        <div className="gap-2 md:text-start text-center">
+        <div className="gap-2 md:text-start text-center text-black dark:text-white">
           <h2 className="text-orange-500 dark:text-blue-300 text-4xl font-bold">
             Abdelrahman Mostafa
           </h2>
@@ -50,18 +50,24 @@ const About = () => {
         </ul>
       </div>
       <div className="space-y-4">
-        <h3 className="text-2xl font-bold">EDUCATION</h3>
+        <h3 className="text-2xl font-bold text-black dark:text-white">
+          EDUCATION
+        </h3>
         <div className="flex  gap-4">
           <div className="w-1 rounded-3xl h-16 bg-gray-200"></div>
           <div className="pt-2 space-y-1">
             {" "}
-            <p className=" text-xl">Bachelor of Science in Computer Science</p>
+            <p className=" text-xl text-black dark:text-white">
+              Bachelor of Science in Computer Science
+            </p>
             <p className="text-gray-400  text-sm">(Graduated at 2023)</p>
           </div>
         </div>
       </div>
       <div className="space-y-4">
-        <h3 className="text-2xl font-bold">OTHER INTERESTS</h3>
+        <h3 className="text-2xl font-bold text-black dark:text-white">
+          OTHER INTERESTS
+        </h3>
 
         <ul
           style={{
@@ -80,7 +86,9 @@ const About = () => {
         </ul>
       </div>
       <div className="space-y-4 pb-10 md:pb-4">
-        <h3 className="text-2xl font-bold">LANGUAGE CONFIGURATION 🧠</h3>
+        <h3 className="text-2xl font-bold text-black dark:text-white">
+          LANGUAGE CONFIGURATION 🧠
+        </h3>
         <pre className="bg-gray-100 dark:bg-white/20 dark:text-white text-sm p-4 rounded-lg overflow-x-auto text-gray-800 md:w-[98%">
           {`const languages = {
   arabic: {

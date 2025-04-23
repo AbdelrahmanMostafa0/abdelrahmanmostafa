@@ -48,7 +48,7 @@ const RenderMobileWindow = ({ children, title = "about" }) => {
           </button>
         </div>
       </div>
-      <div className=" md:bg-white dark:bg-slate-800 h-full overflow-y-auto p-3 text-white  ">
+      <div className="bg-white dark:bg-slate-800 h-full overflow-y-auto p-3   ">
         {renderComp()}
       </div>
     </motion.div>
