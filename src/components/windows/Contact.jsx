@@ -41,8 +41,8 @@ const Contact = () => {
           send me an email!
         </a>
 
-        <div className="flex items-center gap-2">
-          <span className="font-mono text-sm bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded">
+        <div className="flex items-center gap-2 justify-center max-w-full mx-auto">
+          <span className="font-mono text-sm line-clamp-1 max-w-[70%] md:max-w-fit bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded ">
             {email}
           </span>
           <button
