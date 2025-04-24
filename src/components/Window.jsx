@@ -57,7 +57,7 @@ const Window = ({
       {/* Main content */}
       <div
         className={cn(
-          `
+          `custom-scrollbar 
       h-[550px] p-5 py-2 gap-10 flex flex-col justify-center items-center
           md:min-w-[${width}px] md:border-2 md:border-[#424242] md:border-opacity-35 md:bg-white md:dark:bg-slate-800 dark:text-white
           rounded-b-lg drop-shadow-xl overflow-auto

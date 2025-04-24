@@ -34,3 +34,44 @@ body {
 /* body {
   cursor: url("/cursors/cursor-active.png"), ;
 } */
+
+/* global.css */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #6b7280 #e5e7eb; /* thumb track */
+}
+
+/* Chrome/Edge/Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6b7280;
+  border-radius: 10px;
+}
+
+/* global.css */
+.scrollbar-retro {
+  scrollbar-width: auto;
+  scrollbar-color: #c0c0c0 #f0f0f0;
+}
+
+/* For Webkit browsers */
+.scrollbar-retro::-webkit-scrollbar {
+  width: 16px;
+}
+
+.scrollbar-retro::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border: 2px solid #dcdcdc;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #a0a0a0;
+}
+
+.scrollbar-retro::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 2px solid #a0a0a0;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #707070;
+}

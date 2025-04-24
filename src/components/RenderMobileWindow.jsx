@@ -4,6 +4,7 @@ import { FiChevronsDown } from "react-icons/fi";
 import About from "./windows/About";
 import Contact from "./windows/Contact";
 import Links from "./windows/Links";
+import Work from "./windows/Work";
 const RenderMobileWindow = ({ children, title = "about" }) => {
   const { clearWindows, windows } = useWindowsContext();
   const playSound = () => {
@@ -15,7 +16,7 @@ const RenderMobileWindow = ({ children, title = "about" }) => {
       case "about":
         return <About />;
       case "work":
-        return <Links />;
+        return <Work />;
       case "links":
         return <Links />;
       case "contact":

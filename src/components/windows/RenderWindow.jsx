@@ -4,6 +4,7 @@ import Window from "../Window";
 import About from "./About";
 import Contact from "./Contact";
 import Links from "./Links";
+import Work from "./Work";
 
 const RenderWindow = ({ window, setOpenedWindow, containerRef }) => {
   const renderTab = () => {
@@ -50,6 +51,19 @@ const RenderWindow = ({ window, setOpenedWindow, containerRef }) => {
           >
             <div className=" w-full ">
               <Links />
+            </div>
+          </Window>
+        );
+      case "work":
+        return (
+          <Window
+            title={window}
+            containerRef={containerRef}
+            setOpenedWindow={setOpenedWindow}
+            containerStyle={"max-w-[500px]"}
+          >
+            <div className="!overflow-auto w-full h-full scrollbar-retro  ">
+              <Work />
             </div>
           </Window>
         );
