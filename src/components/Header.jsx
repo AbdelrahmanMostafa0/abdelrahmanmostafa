@@ -7,7 +7,6 @@ import { motion } from "motion/react";
 
 const Header = () => {
   const [isDark, setIsDark] = useState(false);
-  console.log("isDark", isDark);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");

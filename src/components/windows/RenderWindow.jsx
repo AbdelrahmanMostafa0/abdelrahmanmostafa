@@ -17,11 +17,8 @@ const RenderWindow = ({ window, setOpenedWindow, containerRef }) => {
             setOpenedWindow={setOpenedWindow}
             containerStyle={"max-w-[500px]"}
           >
-            <div className="!overflow-auto w-full ">
+            <div className="!overflow-auto w-full scrollbar-retro ">
               <About />
-
-              {/* <About /> */}
-              {/* <Contact /> */}
             </div>
           </Window>
         );
@@ -34,7 +31,7 @@ const RenderWindow = ({ window, setOpenedWindow, containerRef }) => {
             setOpenedWindow={setOpenedWindow}
             containerStyle={"max-w-[500px]"}
           >
-            <div className="!overflow-auto w-full ">
+            <div className="!overflow-auto w-full scrollbar-retro ">
               <Contact />
             </div>
           </Window>
@@ -49,7 +46,7 @@ const RenderWindow = ({ window, setOpenedWindow, containerRef }) => {
             setOpenedWindow={setOpenedWindow}
             containerStyle={"max-w-[500px]"}
           >
-            <div className=" w-full ">
+            <div className=" w-full scrollbar-retro ">
               <Links />
             </div>
           </Window>
