@@ -4,7 +4,8 @@ import { WindowProvider } from "@/context/WindowsContext";
 
 export const metadata = {
   title: "Abdelrahman Mostafa",
-  description: "Hi there this my site welcome",
+  description:
+    "Proof I know what I’m doing. Or at least that I can Google really well.",
 };
 
 export default function RootLayout({ children }) {
