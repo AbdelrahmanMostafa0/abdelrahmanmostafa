@@ -30,34 +30,32 @@ const Header = () => {
     audio.play();
   };
   return (
-    <div className="fixed top-5 left-5 text-white z-50">
-      {/* <WiDaySunny className="text-5xl" /> */}
-      <button
-        onClick={() => {
-          playSound();
-          toggleDarkMode();
-        }}
-      >
-        {isDark ? (
-          <motion.div
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 90 }}
-            transition={{ duration: 0.5, repeatType: "reverse" }}
-          >
-            <BsFillSunFill className="text-4xl drop-shadow-lg" />
-          </motion.div>
-        ) : (
-          <motion.div>
-            <RiMoonFill className="text-4xl drop-shadow-lg" />
-          </motion.div>
-        )}
-        {/* {!isDark ? (
+    <button
+      className="fixed top-5 left-5 text-white z-50 p-1"
+      onClick={() => {
+        playSound();
+        toggleDarkMode();
+      }}
+    >
+      {isDark ? (
+        <motion.div
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 90 }}
+          transition={{ duration: 0.5, repeatType: "reverse" }}
+        >
+          <BsFillSunFill className="text-4xl drop-shadow-lg" />
+        </motion.div>
+      ) : (
+        <motion.div>
+          <RiMoonFill className="text-4xl drop-shadow-lg" />
+        </motion.div>
+      )}
+      {/* {!isDark ? (
           <RiMoonFill className="text-4xl" />
         ) : (
           <BsFillSunFill className="text-4xl" />
         )} */}
-      </button>
-    </div>
+    </button>
   );
 };
 
