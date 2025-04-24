@@ -60,6 +60,22 @@ const Work = () => {
         "Globalization: Support for Arabic (ar) and English (en) languages, with easy toggling",
       ],
     },
+    {
+      title: "The palestinian world",
+      link: "https://the-palestinian-world.vercel.app/",
+      imageSrc: "/work/the-palestinian-world.png",
+      technologies: ["HTML CANVAS", "javascript", "HTML", "CSS"],
+      description: [
+        "Concept: A visual solidarity tool to overlay the Palestinian flag frame on any image",
+        "Language Support: Offers full bilingual support with Arabic and English toggles",
+        "Dark Mode: Users can switch between light and dark themes for better accessibility",
+        "Image Upload: Upload your photo and see it live within the flag frame",
+        "Custom Positioning: Move and scale your image freely within the frame using drag-and-drop",
+        "Canvas API: Utilizes HTML5 Canvas to render and merge image with the flag frame",
+        "Download Feature: Export your final creation as a downloadable image with a single click",
+        "Tech Stack: Built using Vanilla JavaScript, HTML, and CSS without external libraries",
+      ],
+    },
   ];
 
   return (
