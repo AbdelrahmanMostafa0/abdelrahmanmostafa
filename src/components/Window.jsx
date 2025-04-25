@@ -6,7 +6,6 @@ import { cn } from "@/utils/cn";
 import { useWindowsContext } from "@/context/WindowsContext";
 const Window = ({
   containerRef,
-  setOpenedWindow,
   title,
   children,
   containerStyle,

@@ -1,5 +1,6 @@
 "use client";
 import { useWindowsContext } from "@/context/WindowsContext";
+import { useWindowWidth } from "@/hooks/useWindowWidth";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -8,9 +9,10 @@ const navItems = [
   { label: "work", icon: "/icons/icon_work.webp" },
   { label: "links", icon: "/icons/icon_links.webp" },
   { label: "contact", icon: "/icons/icon_contact.webp" },
+  { label: "resume", icon: "/icons/resume.png" },
 ];
 
-const NavButton = ({ label, icon, setOpenedWindow }) => {
+const NavButton = ({ label, icon, setOpenedWindow, width }) => {
   const { windows, addWindow } = useWindowsContext();
   const openWindow = () => {
     const audio = new Audio("/sound/click.mp3");
@@ -22,6 +24,7 @@ const NavButton = ({ label, icon, setOpenedWindow }) => {
       addWindow(label);
     }
   };
+  const w = width || 80;
   return (
     <button
       onClick={openWindow}
@@ -32,7 +35,11 @@ const NavButton = ({ label, icon, setOpenedWindow }) => {
         alt={`${label} icon`}
         width={500}
         height={500}
-        className="w-16 md:w-20 drop-shadow-xl transition-transform group-hover:scale-105 group-active:scale-100 dark:"
+        style={{
+          width: `${w}px`,
+          height: "auto",
+        }}
+        className={`w-16 md:w-[${w}px] drop-shadow-xl transition-transform group-hover:scale-105 group-active:scale-100 dark:`}
       />
       <p className="text-xl font-semibold ">{label}</p>
     </button>
@@ -40,6 +47,8 @@ const NavButton = ({ label, icon, setOpenedWindow }) => {
 };
 
 const MainWindow = ({ setOpenedWindow }) => {
+  const { windowWidth } = useWindowWidth();
+
   const taglines = [
     "Dev by Day, Side Project Goblin by Night",
     "CSS Wizard with Too Many Tabs Open",
@@ -80,14 +89,30 @@ const MainWindow = ({ setOpenedWindow }) => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-y-8 gap-x-10 md:gap-y-10">
-          {navItems.map((item) => (
-            <NavButton
-              setOpenedWindow={setOpenedWindow}
-              key={item.label}
-              label={item.label}
-              icon={item.icon}
-            />
-          ))}
+          {navItems.map((item) => {
+            if (item.label === "resume") {
+              if (windowWidth > 768) {
+                return (
+                  <NavButton
+                    setOpenedWindow={setOpenedWindow}
+                    key={item.label}
+                    label={item.label}
+                    width={61.5}
+                    icon={item.icon}
+                  />
+                );
+              }
+            } else {
+              return (
+                <NavButton
+                  setOpenedWindow={setOpenedWindow}
+                  key={item.label}
+                  label={item.label}
+                  icon={item.icon}
+                />
+              );
+            }
+          })}
         </div>
       </div>
     </div>

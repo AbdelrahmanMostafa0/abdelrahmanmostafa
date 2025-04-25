@@ -1,23 +1,33 @@
 "use client";
 import MainWindow from "@/components/MainWindow";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import RenderWindow from "@/components/windows/RenderWindow";
 import { useWindowsContext } from "@/context/WindowsContext";
 import { useWindowWidth } from "@/hooks/useWindowWidth";
 import RenderMobileWindow from "@/components/RenderMobileWindow";
 import { AnimatePresence } from "framer-motion";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
   const containerRef = useRef(null);
+  const [showLoading, setShowLoading] = useState(true);
   const [openedWindow, setOpenedWindow] = useState("");
   const { windows } = useWindowsContext();
   const { windowWidth } = useWindowWidth();
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoading(false);
+    }, 4800);
+
+    return () => clearTimeout(timer);
+  });
   return (
     <div
       ref={containerRef}
-      className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen dark:bg-slate-900"
+      className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen  dark:bg-slate-900"
     >
+      {showLoading && <LoadingScreen />}
       <MainWindow />
       <div className="fixed top-0  dark:hidden left-0 w-full h-full bg-gradient-to-b from-blue-500 to-blue-300 opacity-50 z-0"></div>
       {windowWidth <= 768 && (

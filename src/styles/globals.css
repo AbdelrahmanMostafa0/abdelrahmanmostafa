@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf_viewer.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,4 +76,10 @@ body {
   background: #c0c0c0;
   border: 2px solid #a0a0a0;
   box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #707070;
+}
+
+.windowShadow {
+  box-shadow: 10px 9px 1px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 10px 9px 1px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 10px 9px 1px 0px rgba(0, 0, 0, 0.35);
 }
