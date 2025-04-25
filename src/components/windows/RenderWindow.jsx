@@ -26,8 +26,6 @@ const RenderWindow = ({ window, setOpenedWindow, containerRef }) => {
           >
             <div className="!overflow-auto w-full scrollbar-retro ">
               <About />
-
-              <PDFViewer />
             </div>
           </Window>
         );
