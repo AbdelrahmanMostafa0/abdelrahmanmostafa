@@ -23,15 +23,15 @@ const LoadingScreen = () => {
 
     return () => clearInterval(interval);
   }, []);
-  const sarcasticStatuses = [
-    "Warming up the pixels…",
-    "Counting coffee beans…",
-    "Aligning divs perfectly…",
-    "Recalculating your awesomeness…",
-    "Summoning frontend magic…",
-    "Booting the sarcasm engine…",
-    "Almost there, I swear…",
-  ];
+  // const sarcasticStatuses = [
+  //   "Warming up the pixels…",
+  //   "Counting coffee beans…",
+  //   "Aligning divs perfectly…",
+  //   "Recalculating your awesomeness…",
+  //   "Summoning frontend magic…",
+  //   "Booting the sarcasm engine…",
+  //   "Almost there, I swear…",
+  // ];
   return (
     <AnimatePresence>
       {!finished && (
@@ -44,17 +44,19 @@ const LoadingScreen = () => {
           className="absolute z-50 bg-white dark:bg-slate-900 grid place-content-center top-0 left-0 w-screen h-screen"
         >
           <div className="fixed top-0 dark:hidden left-0 w-full h-full bg-gradient-to-b from-blue-500 to-blue-300 opacity-50 z-0" />
-          <div className="md:hidden bg-white w-[90vw] max-w-[500px] h-96 z-10 gap-10 rounded-xl flex flex-col items-center justify-center  p-4">
-            <HiMiniComputerDesktop className="text-[#424242] text-5xl" />
+          <div className="md:hidden bg-white dark:bg-slate-800  w-[90vw] max-w-[500px] h-96 z-10 gap-10 rounded-xl flex flex-col items-center justify-center  p-4">
+            <HiMiniComputerDesktop className="text-[#424242] dark:text-white text-5xl" />
             <div className="space-y-4 flex flex-col items-center justify-center">
               <h2 className="text-4xl text-center text-[#424242] dark:text-white font-bold -mt-4">
-                {sarcasticStatuses[0]}
+                Warming up the pixels…
               </h2>
               <div className="relative flex items-center justify-center">
-                <AiOutlineLoading3Quarters className="text-7xl text-orange-500 animate-spin" />
-                <p className="absolute">{progress}%</p>
+                <AiOutlineLoading3Quarters className="text-7xl text-orange-500 dark:text-blue-500 animate-spin" />
+                <p className="absolute dark:text-white">{progress}%</p>
               </div>
-              <p className="text-lg font-medium">Hang tight…</p>
+              <p className="text-lg font-medium text-[#424242] dark:text-white ">
+                Hang tight…
+              </p>
             </div>
           </div>
           <div className="md:block hidden md:w-[600px] h-48 space-y-1">
@@ -67,7 +69,7 @@ const LoadingScreen = () => {
             {/* Content */}
             <div className="h-full w-full md:bg-white md:dark:bg-slate-800 rounded-b-xl drop-shadow-lg flex flex-col items-center justify-center space-y-4 p-4">
               <h2 className="text-4xl text-[#424242] dark:text-white font-bold -mt-4">
-                {sarcasticStatuses[0]}
+                Warming up the pixels…
               </h2>
 
               <div className="w-full max-w-[400px] bg-gray-200 dark:bg-slate-700 rounded-full h-4 overflow-hidden">
