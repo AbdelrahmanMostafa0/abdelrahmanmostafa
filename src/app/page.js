@@ -7,6 +7,9 @@ import { useWindowWidth } from "@/hooks/useWindowWidth";
 import RenderMobileWindow from "@/components/RenderMobileWindow";
 import { AnimatePresence } from "framer-motion";
 import LoadingScreen from "@/components/LoadingScreen";
+import { IoCloseCircleSharp } from "react-icons/io5";
+import Image from "next/image";
+import TabHero from "@/components/tab-hero/TabHero";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -14,6 +17,7 @@ export default function Home() {
   const [openedWindow, setOpenedWindow] = useState("");
   const { windows } = useWindowsContext();
   const { windowWidth } = useWindowWidth();
+  const [gamePlay, setGamePlay] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -27,8 +31,9 @@ export default function Home() {
       ref={containerRef}
       className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen  dark:bg-slate-900"
     >
+      {gamePlay && <TabHero setGamePlay={setGamePlay} />}
       {showLoading && <LoadingScreen />}
-      <MainWindow />
+      <MainWindow setGamePlay={setGamePlay} />
       <div className="fixed top-0  dark:hidden left-0 w-full h-full bg-gradient-to-b from-blue-500 to-blue-300 opacity-50 z-0"></div>
       {windowWidth <= 768 && (
         <AnimatePresence>

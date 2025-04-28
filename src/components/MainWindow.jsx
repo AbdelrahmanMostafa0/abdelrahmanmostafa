@@ -12,7 +12,7 @@ const navItems = [
   { label: "resume", icon: "/icons/resume.png" },
 ];
 
-const NavButton = ({ label, icon, setOpenedWindow, width }) => {
+const NavButton = ({ label, icon, width }) => {
   const { windows, addWindow } = useWindowsContext();
   const openWindow = () => {
     const audio = new Audio("/sound/click.mp3");
@@ -46,7 +46,7 @@ const NavButton = ({ label, icon, setOpenedWindow, width }) => {
   );
 };
 
-const MainWindow = ({ setOpenedWindow }) => {
+const MainWindow = ({ setGamePlay }) => {
   const { windowWidth } = useWindowWidth();
 
   const taglines = [
@@ -64,7 +64,7 @@ const MainWindow = ({ setOpenedWindow }) => {
   }, []);
 
   return (
-    <div className="w-full z-10 space-y-[1px] md:max-w-[700px]">
+    <div className="w-full z-10 space-y-[1px] md:max-w-[700px] relative">
       {/* Top bar */}
       <div className="hidden md:flex h-14 items-center px-4 min-w-[700px] bg-[#424242] rounded-t-lg drop-shadow-md border">
         <p className="text-2xl font-bold text-white">home</p>
@@ -73,10 +73,10 @@ const MainWindow = ({ setOpenedWindow }) => {
       {/* Main content */}
       <div
         className="
-        min-h-[500px] p-5 gap-10 flex flex-col justify-center items-center
-        md:min-w-[700px] md:border-2 md:border-[#424242] md:border-opacity-35 md:bg-white md:dark:bg-slate-800
-        rounded-b-lg drop-shadow-xl md:dark:border-white
-      "
+          min-h-[500px] p-5 gap-10 flex flex-col justify-center items-center
+          md:min-w-[700px] md:border-2 md:border-[#424242] md:border-opacity-35 md:bg-white md:dark:bg-slate-800
+          rounded-b-lg drop-shadow-xl md:dark:border-white
+        "
       >
         <div className="pt-10 text-center space-y-4">
           <h1 className="text-5xl font-extrabold dark:text-white">
@@ -94,7 +94,6 @@ const MainWindow = ({ setOpenedWindow }) => {
               if (windowWidth > 768) {
                 return (
                   <NavButton
-                    setOpenedWindow={setOpenedWindow}
                     key={item.label}
                     label={item.label}
                     width={61.5}
@@ -105,7 +104,6 @@ const MainWindow = ({ setOpenedWindow }) => {
             } else {
               return (
                 <NavButton
-                  setOpenedWindow={setOpenedWindow}
                   key={item.label}
                   label={item.label}
                   icon={item.icon}
@@ -115,6 +113,32 @@ const MainWindow = ({ setOpenedWindow }) => {
           })}
         </div>
       </div>
+      <button
+        onClick={() => setGamePlay(true)}
+        className="absolute bottom-3 right-4 group flex items-center justify-center"
+      >
+        <Image
+          src={"/tab.png"}
+          alt="tab"
+          width={500}
+          height={500}
+          className=" w-8"
+        />
+        <Image
+          src={"/tab.png"}
+          alt="tab"
+          width={500}
+          height={500}
+          className=" w-8 absolute group-hover:mb-2 group-hover:mr-2  duration-200"
+        />
+        <Image
+          src={"/tab.png"}
+          alt="tab"
+          width={500}
+          height={500}
+          className=" w-8 absolute group-hover:mb-4 group-hover:mr-4 duration-200"
+        />
+      </button>
     </div>
   );
 };

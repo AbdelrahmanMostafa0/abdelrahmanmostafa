@@ -25,6 +25,7 @@ const Window = ({
       drag
       dragControls={controls}
       dragConstraints={containerRef}
+      dragMomentum={false}
       className={cn(
         `md:block hidden w-full z-10 space-y-[1px] absolute top-[15%] left-[30%] ml-5`,
         containerStyle
