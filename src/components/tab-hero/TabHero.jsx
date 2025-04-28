@@ -12,7 +12,7 @@ const TabHero = ({ setGamePlay }) => {
   useEffect(() => {
     setTimeout(() => {
       setIsFullScreen(true);
-    }, 3000);
+    }, 5000);
   }, []);
   return (
     <div className="w-screen h-screen z-[1000] absolute flex items-center justify-center">

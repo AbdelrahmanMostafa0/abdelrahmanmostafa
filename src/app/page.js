@@ -32,7 +32,7 @@ export default function Home() {
       className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen  dark:bg-slate-900"
     >
       {gamePlay && <TabHero setGamePlay={setGamePlay} />}
-      {showLoading && <LoadingScreen />}
+      {/* {showLoading && <LoadingScreen />} */}
       <MainWindow setGamePlay={setGamePlay} />
       <div className="fixed top-0  dark:hidden left-0 w-full h-full bg-gradient-to-b from-blue-500 to-blue-300 opacity-50 z-0"></div>
       {windowWidth <= 768 && (
