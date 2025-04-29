@@ -14,9 +14,9 @@ const TabHero = ({ setGamePlay }) => {
   return (
     <div className="w-screen h-screen z-[1000] absolute flex items-center justify-center">
       <motion.div
-        initial={{ opacity: 0, scale: 0.2 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.1, ease: "easeOut" }}
+        initial={{ opacity: 0, x: "50vw", y: "50vh", scale: 0.5 }}
+        animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 15 }}
         className={cn(
           "w-screen h-screen z-[1000] absolute  flex items-center justify-center ",
           `${!isFullScreen && "mb-20 mr-20"}`
