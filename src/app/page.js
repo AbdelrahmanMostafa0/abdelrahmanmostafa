@@ -10,6 +10,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import Image from "next/image";
 import TabHero from "@/components/tab-hero/TabHero";
+import GameTrigger from "@/components/tab-hero/GameTrigger";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -31,6 +32,7 @@ export default function Home() {
       ref={containerRef}
       className="grid h-dvh place-content-center overflow-hidden overscroll-none w-screen  dark:bg-slate-900"
     >
+      <GameTrigger setGamePlay={setGamePlay} />
       {gamePlay && <TabHero setGamePlay={setGamePlay} />}
       {/* {showLoading && <LoadingScreen />} */}
       <MainWindow setGamePlay={setGamePlay} />

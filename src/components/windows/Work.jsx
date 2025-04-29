@@ -7,7 +7,7 @@ const Work = () => {
   // Projects Data
   const projects = [
     {
-      title: "Lesoll - Real Estate Market Place",
+      title: "Lesoll ",
       link: "https://lesoll.com",
       imageSrc: "/work/lesoll.png",
       technologies: ["React", "Nextjs", "Tailwind", "Redux toolkit"],

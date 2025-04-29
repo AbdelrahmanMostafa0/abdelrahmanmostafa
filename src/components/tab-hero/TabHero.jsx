@@ -1,8 +1,5 @@
 import { IoCloseCircleSharp } from "react-icons/io5";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { RiSpyLine } from "react-icons/ri";
 import { motion, useDragControls } from "framer-motion";
 import { cn } from "@/utils/cn";
 import GameLoading from "./GameLoading";
@@ -20,7 +17,10 @@ const TabHero = ({ setGamePlay }) => {
         initial={{ opacity: 0, scale: 0.2 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.1, ease: "easeOut" }}
-        className="w-screen h-screen z-[1000] absolute flex items-center justify-center "
+        className={cn(
+          "w-screen h-screen z-[1000] absolute  flex items-center justify-center ",
+          `${!isFullScreen && "mb-20 mr-20"}`
+        )}
       >
         <div
           className={cn(

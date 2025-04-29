@@ -96,7 +96,7 @@ const MainWindow = ({ setGamePlay }) => {
                   <NavButton
                     key={item.label}
                     label={item.label}
-                    width={61.5}
+                    width={62.5}
                     icon={item.icon}
                   />
                 );
@@ -113,32 +113,6 @@ const MainWindow = ({ setGamePlay }) => {
           })}
         </div>
       </div>
-      <button
-        onClick={() => setGamePlay(true)}
-        className="absolute bottom-3 right-4 group flex items-center justify-center"
-      >
-        <Image
-          src={"/tab.png"}
-          alt="tab"
-          width={500}
-          height={500}
-          className=" w-8"
-        />
-        <Image
-          src={"/tab.png"}
-          alt="tab"
-          width={500}
-          height={500}
-          className=" w-8 absolute group-hover:mb-2 group-hover:mr-2  duration-200"
-        />
-        <Image
-          src={"/tab.png"}
-          alt="tab"
-          width={500}
-          height={500}
-          className=" w-8 absolute group-hover:mb-4 group-hover:mr-4 duration-200"
-        />
-      </button>
     </div>
   );
 };
