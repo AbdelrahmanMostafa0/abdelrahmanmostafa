@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { cn } from "@/utils/cn";
 const DEVELOPMENT = [
   "HTML / CSS",
   "javascript",
@@ -12,7 +15,33 @@ const DEVELOPMENT = [
   "Framer Motion",
 ];
 const TOOLS = ["Git", "AWS", "Figma", "VS Code", "Postman", "Canva", "Blender"];
+const images = [
+  "/personal-images/img-1.png",
+  "/personal-images/img-2.png",
+  "/personal-images/img-3.png",
+  "/personal-images/img-4.png",
+  "/personal-images/img-5.png",
+  "/personal-images/img-6.png",
+  "/personal-images/img-7.png",
+  "/personal-images/img-8.png",
+  "/personal-images/img-9.png",
+  "/personal-images/img-10.png",
+  "/personal-images/img-11.png",
+  "/personal-images/img-12.png",
+  "/personal-images/img-13.png",
+  "/personal-images/img-14.png",
+];
 const About = () => {
+  const shuffleArray = (arr) => {
+    const array = [...arr];
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  const randomizedImages = useMemo(() => shuffleArray(images), []);
   return (
     <div className="w-full space-y-8">
       <div className="flex md:flex-row flex-col dark:bg- items-center gap-5 pb-4 border-b-2 ">
@@ -143,8 +172,133 @@ const About = () => {
 };`}
         </pre>
       </div>
+      <div className="space-y-4 pb-10 md:pb-4">
+        <h3 className="text-2xl font-bold text-black dark:text-white">
+          MEMORIES
+        </h3>
+        {/* <p>
+          Good times, hard times, and the friends who were there — every memory
+          help to shape the person you are today.
+        </p> */}
+        <p>
+          Memories. They’re not just snapshots of the past; they’re the building
+          blocks of who we are. Every laugh, every tear, every moment shared
+          with friends and family is a thread in the tapestry of our lives.
+        </p>
+        {}
+        <div className="grid grid-cols-4 md:grid-cols-12 gap-4">
+          <div className="col-span-6 space-y-4">
+            {" "}
+            <FadeInImage
+              src={"/personal-images/img-7.png"}
+              className={"col-span-8 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-1.png"}
+              className={"col-span-8 col-start-7 md:hidden row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-3.png"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-4.png"}
+              className={"col-span-8 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-5.png"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-12.png"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-10.png"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-15.jpg"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+            {/* <FadeInImage
+              src={"/personal-images/img-16.jpg"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            /> */}
+            <div className=" hidden md:flex items-center justify-center h-48 font-semibold text-center">
+              <p>
+                Miss the time when I thought life was simple… before bills,
+                deadlines, and needing coffee to function. ☕💀
+              </p>
+            </div>
+          </div>
+          <div className="col-span-6 space-y-4">
+            {" "}
+            {/* <FadeInImage
+              src={"/personal-images/img-2.png"}
+              className={"col-span-8 row-start-1"}
+            /> */}
+            <FadeInImage
+              src={"/personal-images/img-1.png"}
+              className={"col-span-8 col-start-7 md:block hidden row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-6.png"}
+              className={"col-span-8 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-8.png"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-11.png"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-9.png"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+            <FadeInImage
+              src={"/personal-images/img-17.jpg"}
+              className={"col-span-8 col-start-7 row-start-1"}
+            />
+          </div>
+
+          {/* {randomizedImages.map((src, index) => (
+            <FadeInImage
+              key={index}
+              src={src}
+              className=""
+              delay={index * 0.05}
+            />
+          ))} */}
+        </div>
+      </div>
     </div>
   );
 };
 
 export default About;
+const FadeInImage = ({ src, delay = 0, className }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      className={cn("w-full rounded-lg shadow-md", className)}
+    >
+      <Image
+        src={src}
+        alt="memory"
+        width={1000}
+        height={1000}
+        className="w-full h-full object-cover rounded-lg"
+        loading="lazy"
+      />
+    </motion.div>
+  );
+};
