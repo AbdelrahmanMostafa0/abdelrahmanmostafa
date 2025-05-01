@@ -47,7 +47,7 @@ const TabHero = ({ setGamePlay }) => {
               `
         min-h-[500px] p-5 gap-10 flex flex-col justify-center items-center
         md:min-w-[500px] md:border-2 md:border-[#424242] md:border-opacity-35 md:bg-white md:dark:bg-slate-800
-        rounded-b-lg drop-shadow-xl md:dark:border-white
+        rounded-b-lg drop-shadow-xl md:dark:border-white overflow-hidden
       `,
               `${isFullScreen ? " duration-150 w-screen h-full " : ""}`
             )}
