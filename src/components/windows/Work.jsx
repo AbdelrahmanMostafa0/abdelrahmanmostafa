@@ -7,13 +7,13 @@ const Work = () => {
   // Projects Data
   const projects = [
     {
-      title: "Lesoll ",
+      title: "Lesoll",
       link: "https://lesoll.com",
       imageSrc: "/work/lesoll.png",
-      technologies: ["React", "Nextjs", "Tailwind", "Redux toolkit"],
+      technologies: ["React", "Nextjs", "Tailwind", "Redux toolkit", "I18n"],
       description: [
         "Built with Next.js & Tailwind CSS",
-        "Responsive UI for property listings and marketing pages",
+        "Responsive UI for property & car listings and marketing pages",
         "Developed a custom admin dashboard with traffic & analytics overview",
         "Integrated backend APIs for dynamic data rendering",
         "Deployed on AWS for scalability and performance",
