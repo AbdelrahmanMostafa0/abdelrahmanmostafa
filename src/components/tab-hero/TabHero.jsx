@@ -4,6 +4,7 @@ import { motion, useDragControls } from "framer-motion";
 import { cn } from "@/utils/cn";
 import GameLoading from "./GameLoading";
 import { TabManager } from "@/hooks/useTabManger";
+import useTabHero from "@/hooks/useTabHero";
 const TabHero = ({ setGamePlay }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   useEffect(() => {
@@ -11,6 +12,9 @@ const TabHero = ({ setGamePlay }) => {
       setIsFullScreen(true);
     }, 5000);
   }, []);
+  const { tabs } = useTabHero();
+  const windowWidth = window?.innerWidth - 300;
+
   return (
     <div className="w-screen h-screen z-[1000] absolute flex items-center justify-center">
       <motion.div
@@ -52,7 +56,11 @@ const TabHero = ({ setGamePlay }) => {
               `${isFullScreen ? " duration-150 w-screen h-full " : ""}`
             )}
           >
-            {!isFullScreen ? <GameLoading /> : <TabManager />}
+            {!isFullScreen ? (
+              <GameLoading />
+            ) : (
+              <TabManager windowWidth={windowWidth} />
+            )}
           </div>
         </div>
       </motion.div>

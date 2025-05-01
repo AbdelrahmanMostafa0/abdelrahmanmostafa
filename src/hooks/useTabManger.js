@@ -7,7 +7,7 @@ import { TiTabsOutline } from "react-icons/ti";
 import { IoClose, IoCloseSharp } from "react-icons/io5";
 import { HiMiniMinus } from "react-icons/hi2";
 import { VscSettings } from "react-icons/vsc";
-export const TabManager = () => {
+export const TabManager = ({ windowWidth }) => {
   const [tabs, setTabs] = useState([]); // Store active tabs
   const [tabId, setTabId] = useState(0); // To give each tab a unique ID
 
@@ -40,19 +40,22 @@ export const TabManager = () => {
       return randomBetween0and100() + 500;
     }
   };
+  const leftPosition = Math.floor(Math.random() * windowWidth);
+  console.log("leftPosition", leftPosition);
+
   return (
     <div className="w-full">
       <motion.div
         style={{
           width: "500px",
-          left: `${percentageNumber}%`,
+          left: `${leftPosition}px`,
         }}
         ref={tabRef}
-        initial={{ top: -300 }}
-        animate={{ top: window.innerHeight }} // Animate to bottom of screen
+        // initial={{ top: -300 }}
+        // animate={{ top: window.innerHeight }} // Animate to bottom of screen
         transition={{ duration: 4, ease: "linear" }} // Duration = 3 seconds
         className={cn(
-          `md:block hidden w-[500px] left-[calc(100%_-_500)]  z-10  absolute  `
+          `md:block hidden w-[500px] left-[${500}px]  z-10  absolute  `
         )}
       >
         {/* Top bar */}
@@ -63,7 +66,7 @@ export const TabManager = () => {
         >
           <div className="w-full flex items-center justify-between ">
             <div className="w-5/12 rounded-t-xl h-6 bg-[#fff] ml-0.5 flex items-center justify-between px-2   ">
-              <p className="line-clamp-1 text-xs">{funnyTabTitles[7]}</p>
+              <p className="line-clamp-1 text-xs">{funnyTabTitles[7].title}</p>
               <IoClose className="text-black" />
             </div>
             <div className="flex items-center gap-2 pr-3">
@@ -79,7 +82,10 @@ export const TabManager = () => {
               </div>
               <p>
                 <strong>google.com</strong>/search?q=
-                {funnyTabTitles[7].split(" ").join("+").toLocaleLowerCase()}
+                {funnyTabTitles[7].title
+                  .split(" ")
+                  .join("+")
+                  .toLocaleLowerCase()}
               </p>
             </div>
           </div>
