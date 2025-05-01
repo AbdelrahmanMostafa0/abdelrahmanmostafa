@@ -39,13 +39,13 @@ body {
 
 /* global.css */
 .custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #6b7280 #e5e7eb; /* thumb track */
+  scrollbar-width: thin; /* Makes it thin */
+  scrollbar-color: #6b7280 #e5e7eb; /* thumb and track */
 }
 
 /* Chrome/Edge/Safari */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #e5e7eb;
@@ -53,6 +53,21 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #6b7280;
   border-radius: 10px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .custom-scrollbar {
+    scrollbar-color: #9ca3af #374151; /* lighter thumb, darker track */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #374151;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #9ca3af;
+  }
 }
 
 /* global.css */
