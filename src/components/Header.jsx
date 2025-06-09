@@ -31,7 +31,7 @@ const Header = () => {
     audio.play();
   };
   return (
-    <div className="flex w-full px-4 fixed top-5 z-10 justify-between items-center">
+    <div className="flex w-full px-4 fixed top-5 z-50 justify-between items-center">
       <button
         className=" left-5 text-white p-1"
         onClick={() => {
